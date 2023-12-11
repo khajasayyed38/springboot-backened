@@ -25,7 +25,7 @@ public class EmployeeController {
     @PostMapping
     public ResponseEntity<Employee> createEmployee(@RequestBody Employee employee){
         employeeRepository.save(employee);
-        return new ResponseEntity(employee,HttpStatus.CREATED);
+        return new ResponseEntity<>(employee,HttpStatus.CREATED);
     }
     @GetMapping("{id}")
     public ResponseEntity<Employee> getEmployeeById(@PathVariable long id){
